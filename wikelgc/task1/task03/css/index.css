@@ -1,0 +1,35 @@
+/*basic reset*/
+
+body,.main,.right,.center,.left{
+    margin: 0;
+    padding: 20px;
+
+}
+.main{
+    background-color: #eee;
+    border: 1px solid #999;
+    overflow: auto;
+}
+
+.left,.center,.right{
+    background-color: white;
+    border:1px solid #999;
+}
+
+.left{
+    width: 160px;
+    height: 80px;
+}
+
+.left .logoName{
+    float: right;
+}
+
+.right{
+    width: 80px;
+}
+
+
+.center p{
+    text-indent:2em;
+}
