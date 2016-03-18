@@ -27,9 +27,21 @@ body,.main,.right,.center,.left{
 
 .right{
     width: 80px;
+    /*padding: 0px;*/
+    padding-top:0 ;
+}
+
+.right img{
+    margin-top: 20px;
+    /*float: right;*/
+}
+
+.center{
+    min-width:300px;
 }
 
 
 .center p{
     text-indent:2em;
+
 }
