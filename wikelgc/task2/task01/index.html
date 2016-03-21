@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <label>请输入北京今天空气质量:<input id="api-input" type="text" value="10"></label>
+    <button id="button">确认填写</button>
+
+    <div>
+        你输入的值是:<span id="api-display">尚无录入</span>
+    </div>
+
+    <script>
+        (function(){
+            var input = document.getElementById("api-input");
+            var btn = document.getElementById("button");
+            var display=document.getElementById("api-display")
+
+
+            //方法一：直接绑定onclick事件
+            btn.onclick = function(){
+                display.innerText=input.value;
+            }
+
+            //方法二：使用事件监听题
+//            addEventListener('click',function(){
+//                display.innerHTML=input.value;
+//            })
+
+
+
+        })()
+    </script>
+</body>
+</html>
