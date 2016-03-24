@@ -1,0 +1,19 @@
+.child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+}
+
+.leftTop{
+    position: absolute;
+    border-radius:0 0 50px 0;
+}
+
+.rightBottom{
+    position: absolute;
+    top:150px;
+    left: 350px;
+    border-radius: 50px 0 0 0;
+}

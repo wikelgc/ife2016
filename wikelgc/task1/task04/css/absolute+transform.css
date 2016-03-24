@@ -1,0 +1,22 @@
+.parent{
+    background: #ffcc00;
+}
+
+.child{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.leftTop{
+    position: absolute;
+    border-radius:0 0 50px 0;
+}
+
+.rightBottom{
+    position: absolute;
+    top:150px;
+    left: 350px;
+    border-radius: 50px 0 0 0;
+}

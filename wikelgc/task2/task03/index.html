@@ -35,21 +35,17 @@
      * 返回一个数组，格式见函数中示例
      */
     function getData() {
-        var data = document.getElementById("source");
-        console.log(data);
-        for(var i=0;i<data.length;i++){
-            console.log(data[i]);
-            alert(data);
+        var data=[],aqidate;
+        var city="";
+        var dataLis = document.getElementById("source").getElementsByTagName("li");
+
+        for(var i=0;i<dataLis.length;i++){
+
+            aqidate=dataLis[i].getElementsByTagName('b')[0].innerText;
+            city=dataLis[i].innerText.replace("空气质量："+aqidate,"");
+            data[i]=[city,aqidate];
+            console.log(city)
         }
-
-        /*
-         data = [
-         ["北京", 90],
-         ["北京", 90]
-         ……
-         ]
-         */
-
         return data;
 
     }
@@ -59,7 +55,10 @@
      * 返回一个排序后的数组
      */
     function sortAqiData(data) {
-
+        data.sort(function(Arr1,Arr2){
+            return Arr1[1]-Arr2[1];
+        });
+        return data;
     }
 
     /**
@@ -68,7 +67,12 @@
      * 格式见ul中的注释的部分
      */
     function render(data) {
-
+        var sort=["一","二","三","四","五","六","七","八"];
+        var resort = document.getElementById("resort");
+        console.log(data.length);
+        for(var i=0;i<data.length;i++){
+            resort.innerHTML+="<li>第"+sort[i]+"名:"+data[i][0]+"空气质量:<b>"+data[i][1]+"</b></li>";
+        }
     }
 
     function btnHandle() {
@@ -85,8 +89,6 @@
         btn.onclick=function(){
             btnHandle();
         }
-
-
     }
 
     init();
