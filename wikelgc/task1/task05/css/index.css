@@ -1,0 +1,222 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+#header{
+    height: 60px;
+    background: #333333;
+    display: block;
+}
+
+#header img{
+    margin:6px;
+    margin-left:40px;
+}
+
+#header nav{
+    color: white;
+    float: right;
+    padding: 4px;
+
+}
+
+#header nav li{
+    float: left;
+    /*list-style: none;*/
+    margin-right: 25px;
+    color: black;
+}
+
+
+#header nav li a{
+    color:white;
+    list-style: none;
+    text-decoration: none
+}
+
+#header nav li a:hover{
+    color:#DEDEDE;
+}
+
+#main{
+    background:#DEDEDE;
+    padding: 20px;
+}
+
+#main article{
+    /*width: 1350px;*/
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#main article header h1{
+    /*width: 1350px;*/
+    font-size: 24px;
+    margin: 20px 0 20px 0;
+}
+
+#main article header h2{
+    /*width: 1350px;*/
+    font-size: 18px;
+    margin: 20px 0 20px 0;
+}
+
+#main article header span,time{
+    /*width: 1350px;*/
+    font-size: 12px;
+}
+
+#main article table{
+    width: 100%;
+    display: table;
+    border-collapse:collapse;
+}
+#main article table thead{
+    background: black;
+    color: white;
+}
+#main article table tbody tr th{
+    padding: 4px;
+}
+
+#main article table tfoot{
+    background: #DEDEDE;
+    color: black;
+    border: 0;
+}
+
+
+#main section{
+    /*width: 1350px;*/
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+#main section figure{
+    padding: 10px;
+    margin: 16px;
+    border:1px solid lightsteelblue;
+    width: 120px;
+    height: 125px;
+}
+
+#main section figure figcaption{
+    text-align: center;
+}
+
+
+#main section figure img{
+    max-width:100%;
+    max-height:100%
+}
+
+
+
+#main aside{
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+
+#main aside  header{
+    background: #DEDEDE;
+}
+
+#main aside  header h1{
+    background: white;
+    margin-left: 3px;
+    padding-left: 10px;
+}
+
+
+.rightLabel label:first-child{
+    margin: 10px 0;
+    width: 30%;
+    padding-right: 10px;
+    display: inline-block;
+
+    text-align: right;
+    /*vertical-align:top ;*/
+}
+
+
+
+.rightLabel .input{
+    display: inline-block;
+    text-align: left;
+
+}
+
+.rightLabel div{
+    margin-left: 30%;
+    padding-left: 18px;
+    text-align: left;
+    /*vertical-align:top ;*/
+}
+
+#describeLabel{
+    /*padding: 0px;*/
+    vertical-align:top ;
+}
+
+#describe{
+    margin-top: 10px;
+    width: 60%;
+    height: 100px;
+
+}
+
+.input input{
+    width: 100%;
+    background: #3355D0;
+    margin: 12px;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+
+
+
+#footer{
+    background: #000;
+    height: 30px;
+    padding: 20px;
+    /*float:right;*/
+}
+
+#footer  div{
+    /*margin: 0 auto;*/
+    color: white;
+    text-align: center;
+    clear: both;
+}
+
+
+#main{
+    float:left;
+}
+
+#content{
+    min-width: 500px;
+    float: left;
+    width: 70%;
+    margin: 0 auto;
+}
+
+#aside{
+    min-width: 250px;
+    width: 25%;
+    float: left;
+    margin-left:20px;
+}
+
+
+
+

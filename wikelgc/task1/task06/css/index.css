@@ -1,0 +1,96 @@
+#content{
+    width: 890px;
+    height: 1380px;
+    /*border: 1px solid #333333;*/
+    padding: 0 45px;
+    margin: 0 auto;
+}
+
+#header{
+    width: 892px;
+    height: 61px;
+    border-bottom:2px solid #938e8c;
+    margin:0 auto;
+}
+
+.header-left{
+    float: left;
+    width: 110px;
+    height: 21px;
+    background: #D45d5c;
+    padding-top: 40px;
+    text-align: center;
+}
+.header-left span{
+    font-size: 12px;
+    color: #ffffff;
+    font-family: ºÚÌå;
+}
+
+.header-time{
+    width: 100px;
+    height: 21px;
+    padding-top: 40px;
+    float: right;
+    text-align:right;
+}
+
+.header-time span{
+    font-size: 12px;
+    color: #D45d5c;
+}
+
+#main{
+    margin-top:36px;
+}
+.main-img{
+    width: 641px;
+    height: 301px;
+    float: left;
+}
+
+.main-about{
+    margin-left:690px;
+    width: 203px;
+    height: 301px;
+    border-top: 2px solid #cc8091;
+}
+
+.main-about .about,.technologe{
+    font-size:24px;
+    color: black;
+    margin: 0px;
+    padding: 0px;
+    margin-right: 20px;
+    border-bottom: 1px solid black;
+    display:inline-block;
+}
+
+.main-about-number{
+    margin: 0;
+    padding: 0;
+    font-size: 116px;
+    color: #75b86b;
+}
+
+.main-about .about span, .technologe span{
+    font-size: 30px;
+}
+
+.main-about .technologe{
+    /*font-size: ;*/
+}
+
+#comment{
+    margin-top: 26px;
+    width: 100%;
+    height: 240px;
+    background: #999999;
+}
+
+
+#final{
+    width: 100%;
+    height: 649px;
+    border-bottom: 1px solid #938e8c;
+}
