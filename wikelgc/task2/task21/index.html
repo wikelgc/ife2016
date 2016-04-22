@@ -29,7 +29,24 @@
             float: left;
             border: 1px solid #ccc;
         }
-        .liRed{
+        .upBlue{
+             padding: 0;
+             margin: 0;
+             width: 58px;
+             height: 15px;
+             background: blue;
+         }
+
+        .downRed{
+            padding: 0;
+            margin: 0;
+            width: 58px;
+            height: 43px;
+            background: red;
+        }
+
+
+        .downBlue{
             padding: 0;
             margin: 0;
             width: 58px;
@@ -37,13 +54,52 @@
             background: blue;
         }
 
-        .liGreen{
+        .upRed{
             padding: 0;
             margin: 0;
             width: 58px;
             height: 43px;
             background: red;
         }
+
+
+        .leftBlue{
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+            width: 15px;
+            height: 58px;
+            background: blue;
+        }
+
+        .rightRed{
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+            width: 43px;
+            height: 58px;
+            background: red;
+            /*float: right;*/
+        }
+
+        .rightBlue{
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+            width: 15px;
+            height: 58px;
+            background: blue;
+        }
+
+        .leftRed{
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+            width: 43px;
+            height: 58px;
+            background: red;
+        }
+
     </style>
 </head>
 
@@ -54,14 +110,17 @@
             <li class="tableLi"></li>
         </ul>
     </div>
-    <input value="Go" type="text" id="inputOrder" ><input value="执行" type="button" id="carryOut">
+    <input value="Go" type="text" id="getCommand" ><input value="执行" type="button" id="getClick">
 </div>
 
 <script>
     var content = document.getElementById("content");
     var items="<ul><li class='tableLi'></li></ul>";
 
-    var carryOut = document.getElementById("carryOut");
+    var getClick = document.getElementById("getClick");
+    var getCommand = document.getElementById("getCommand");
+
+
 
     for(var i=1;i<100;i++){
         items+="<ul><li class='tableLi'></li></ul>";
@@ -70,10 +129,50 @@
 
     var li = document.getElementsByTagName("li");
 
+    var number = Math.floor(Math.random()*100);
+
+    //上下左右
+    var up   = "<div class='upBlue'></div><div class='downRed'></div>";
+    var down = "<div class='upRed'></div><div class='downBlue'></div>";
+    var left = "<div class='leftBlue'></div><div class='rightRed'></div>";
+    var right = "<div class='leftRed'></div><div class='rightBlue'></div>"
+
+    var turn = [up,right,down,left];
+    //默认情况下是向上的
+    var Items = right;
+    li[number].innerHTML=Items;
+
+    getClick.addEventListener("click",function(){
+        initEvent();
+    },false);
 
 
-    var liItem ="<div class='liRed'></div><div class='liGreen'></div>";
-    li[10].innerHTML=liItem;
+    function initEvent(){
+        var command = getCommand.value.trim().toLocaleLowerCase();
+
+        li[number].innerHTML="";
+        if(command == "go"){
+            if(Items == up && number/10.0>1){
+                number=number -10;
+            }else if(Items == down && number/10.0<9){
+                number =number + 10;
+            }else if(Items == left && number%10>1){
+                number--;
+            }else if(Items == right && number%10<9){
+                number++;
+            }
+        }else if(command == "turn left" || command == "left"){
+            Items = turn[(turn.indexOf(Items)+3)%4];
+        }else if(command == "turn right" || command == "right"){
+            Items = turn[(turn.indexOf(Items)+1)%4];
+        }else if(command == "turn back" || command == "back"){
+            Items = turn[(turn.indexOf(Items)+2)%4];
+        }
+
+        li[number].innerHTML=Items;
+    }
+
+
 </script>
 </body>
 </html>
