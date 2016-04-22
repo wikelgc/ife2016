@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IFE JavaScript Task 06</title>
+</head>
+<style>
+    .inner-wrap{
+        display: inline-block;
+        width:30px;
+        height: 30px;
+        border:1px solid #ccc;
+        margin:10px;
+        text-align: center;
+    }
+
+    .tag-wrap,.love-wrap{
+        background-color: deepskyblue;
+        color: #FFF;
+        display: inline-block;
+        padding: 3px;
+        margin:7px;
+    }
+    .love-wrap{
+        background-color: orange;
+    }
+
+    .tag-wrap:hover{
+        background-color: red;
+    }
+
+
+    .content{
+        margin: 20px;
+    }
+</style>
+<body>
+<div>
+    <div class="content">
+        <label>Tag:</label><input placeholder="nodejs" id="tag">
+        <div id="api-tag"></div>
+    </div>
+
+    <div class="content">
+        <textarea placeholder="输入兴趣爱好" style="width: 20em;height: 5em"></textarea><br>
+        <input type="button" id="lovebtn" value="确认兴趣爱好">
+        <div id="api-love"></div>
+    </div>
+</div>
+<script src="./js/index.js"></script>
+</body>
+</html>

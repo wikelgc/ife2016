@@ -76,6 +76,18 @@ function renderAqiList(){
 
 }
 
+function randomnumber(){
+    var random = document.getElementById("random");
+
+    random.onclick = function() {
+        Arrs=[];
+        for (var i = 0; i < 40; i++) {
+            Arrs.push((Math.floor(Math.random()*100 + 1)) % 100);
+        }
+        renderAqiList();
+    }
+}
+
 
 function sortData(){
     var sort = document.getElementById("sort");
@@ -99,6 +111,7 @@ function init(){
     initGetValue();
     renderAqiList();
     sortData()
+    randomnumber();
 }
 
 init();/**

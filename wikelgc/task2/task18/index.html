@@ -1,0 +1,84 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>IFE JavaScript Task 18</title>
+    <style>
+    #myform{
+        width: 400px;
+        margin: 100px auto;
+    }
+    
+    .wrap{
+        margin: 10px;
+    }
+    .true{
+        color: green;
+    }
+    .flase{
+        color: red;
+    }
+    label{
+        display: inline-block;
+        width: 80px;
+        text-align: right;
+        padding-right: 10px;
+    }
+
+    input{
+        /*margin-left: 10%;*/
+        width: 240px;
+    }
+    input:focus{
+        border: 1px solid red;
+    }
+    #myForm p{
+        display: none;
+        color: #CCC;
+        padding-left:100px ;
+    }
+    input[type="submit"]{
+        width: 80px;
+        margin-left: 270px;
+        /*float: right;*/
+        /*clear: both;*/
+    }
+    </style>
+    <script type="text/javascript">
+    </script>
+</head>
+
+<body>
+<form id="myForm" >
+    <div class="wrap">
+            <label for="username">名称</label>
+            <input id="username" type="text" name="username" size="30" value="ss">
+            <p >必填,长度为4-16个字符</p>
+    </div>
+
+    <div class="wrap">
+    <label for="password">密码</label>
+    <input id="password" type="password" name="password">
+    <p>请输入密码</p>
+    </div>
+
+    <div class="wrap" >
+        <label for="passwords">密码确认</label>
+        <input id="passwords" type="password" name="passwords">
+        <p>请再次输入相同的密码</p>
+    </div>
+    <div class="wrap">
+        <label for="email">邮箱</label>
+        <input id="email" type="email" name="email">
+        <p>请输入邮箱</p>
+    </div>
+    <div class="wrap">
+        <label for="phone">手机</label>
+        <input id="phone" type="text" name="phone">
+        <p>请输入邮箱</p>
+    </div>
+
+    <input type="submit" value="提交">
+</form>
+<script src="js/index.js"></script>
+</body>
+</html>

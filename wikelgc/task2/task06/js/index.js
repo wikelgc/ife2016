@@ -6,48 +6,38 @@
 
 var Arrs = [1,2,3];
 
-function addEventHandler(flag,number){
+function addEventHandler(flag){
 
-    if(flag == 1){
-        Arrs.pop();//ÓÒ³ö
-    }else if(flag == 3){
-        Arrs.shift();//×ó³ö
+    number = document.getElementById("number").value.trim();
+    if(!number.match(/^\d+$/)) {
+        alert("å¿…é¡»ä¸ºæ•´æ•°")
+        return;
     }
 
-    //alert(number);
+    if(flag == 1){
+        Arrs.pop();
+    }else if(flag == 3){
+        Arrs.shift();
+    }
     if(number!=""){
         if(flag == 2){
-            Arrs.push(number);//ÓÒ½ø
+            Arrs.push(number);
         }else if(flag == 4){
-            Arrs.unshift(number);//×ó½ø
+            Arrs.unshift(number);
         }
     }
     renderAqiList();
-
 }
 
-//³õÊ¼»¯
+//
 function initGetValue(){
-    var number;
-    document.getElementById("rightOut").onclick = function(){
-        number = document.getElementById("number").value.trim();
-        addEventHandler(1,number);
-    };
-    document.getElementById("rightIn").onclick = function(){
-        number = document.getElementById("number").value.trim();
-        addEventHandler(2,number);
-    };
-    document.getElementById("leftOut").onclick = function(){
-        number = document.getElementById("number").value.trim();
-        addEventHandler(3,number);
-    };
-    document.getElementById("leftIn").onclick = function(){
-        number = document.getElementById("number").value.trim();
-        addEventHandler(4,number);
-    };
+    document.getElementById("rightOut").onclick = function(){addEventHandler(1);};
+    document.getElementById("rightIn").onclick = function(){addEventHandler(2);};
+    document.getElementById("leftOut").onclick = function(){addEventHandler(3);};
+    document.getElementById("leftIn").onclick = function(){addEventHandler(4);};
 }
 
-//äÖÈ¾¶ÓÁÐ
+//
 function renderAqiList(){
 
     var wrap = document.getElementById("api-wrap");

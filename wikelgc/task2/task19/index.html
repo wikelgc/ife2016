@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IFE JavaScript Task 19</title>
+    <style>
+        #myForm{
+            width: 400px;
+            margin: 100px auto;
+        }
+
+        li{
+            list-style: none;
+            display: inline-block;
+        }
+
+        .wrap{
+            display: none;
+        }
+        select{
+            width: 80px;
+        }
+
+    </style>
+</head>
+<body>
+    <form method="post" id="myForm">
+        <ul>
+            <li><input type="radio" name ="check" value="ss">在校大学生</li>
+            <li><input type="radio" name="check" value="bb">非在校大学生</li>
+        </ul>
+        <div id = "dispaly">
+            <div id="school" class="wrap">
+                <label>学校</label>
+                <select id="selLocation">
+                </select>
+                <select id="selschool">
+                </select>
+            </div>
+
+            <div id="work" class="wrap">
+                <label>就业单位</label>
+                <input type="text">
+            </div>
+        </div>
+    </form>
+<script src="./js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #content{
+            width: 600px;
+            height: 600px;
+            position: relative;
+            border: 1px solid black;
+            padding: 0;
+        }
+        div{
+            padding: 0;
+            margin: 0;
+        }
+        
+        ul{
+                     padding: 0;
+                     margin: 0;
+
+        }
+        li{
+            margin: 0;
+            list-style: none;
+            width:58px;
+            height:58px;
+            float: left;
+            border: 1px solid #ccc;
+        }
+        .liRed{
+            padding: 0;
+            margin: 0;
+            width: 58px;
+            height: 15px;
+            background: blue;
+        }
+
+        .liGreen{
+            padding: 0;
+            margin: 0;
+            width: 58px;
+            height: 43px;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+<div>
+    <div class="content" id="content">
+        <ul>
+            <li class="tableLi"></li>
+        </ul>
+    </div>
+    <input value="Go" type="text" id="inputOrder" ><input value="执行" type="button" id="carryOut">
+</div>
+
+<script>
+    var content = document.getElementById("content");
+    var items="<ul><li class='tableLi'></li></ul>";
+
+    var carryOut = document.getElementById("carryOut");
+
+    for(var i=1;i<100;i++){
+        items+="<ul><li class='tableLi'></li></ul>";
+    }
+    content.innerHTML = items;
+
+    var li = document.getElementsByTagName("li");
+
+
+
+    var liItem ="<div class='liRed'></div><div class='liGreen'></div>";
+    li[10].innerHTML=liItem;
+</script>
+</body>
+</html>
