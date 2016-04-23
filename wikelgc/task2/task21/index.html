@@ -4,59 +4,93 @@
     <meta charset="UTF-8">
     <title></title>
     <style>
+        body,div,ul,li{
+            padding: 0;
+            margin: 0;
+        }
+
+        .main{
+            width: 660px;
+            height: 700px;
+            margin: 100px auto;
+        }
+        .upNumber{
+            margin-left: 50px; ;
+        }
+
+        .upNumber li{
+            padding: 0;
+            /*padding-bottom: 6px;*/
+            margin: 0;
+            display: inline-block;
+            width: 56px;
+            text-align: center;
+        }
+
+        .leftNumber{
+            width: 60px;
+            height: 600px;
+            float: left;
+        }
+
+        .leftNumber li{
+            padding-top: 20px;
+            margin: 0;
+            list-style: none;
+            /*display: inline-block;*/
+            height: 40px;
+            text-align: center;
+            vertical-align: ;
+        }
         #content{
+
             width: 600px;
             height: 600px;
             position: relative;
             border: 1px solid black;
+            /*padding: 0 0 0 60px;*/
             padding: 0;
+            margin-left: 60px;
         }
-        div{
-            padding: 0;
-            margin: 0;
-        }
-        
-        ul{
-                     padding: 0;
-                     margin: 0;
 
-        }
-        li{
-            margin: 0;
+        #content li{
             list-style: none;
             width:58px;
             height:58px;
             float: left;
             border: 1px solid #ccc;
         }
+        li div{
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .command{
+
+            margin: 10px 10px 10px 100px;
+        }
         .upBlue{
-             padding: 0;
-             margin: 0;
              width: 58px;
              height: 15px;
              background: blue;
          }
 
         .downRed{
-            padding: 0;
-            margin: 0;
             width: 58px;
             height: 43px;
             background: red;
+            /*border: 1px solid #CCC;*/
         }
 
 
         .downBlue{
-            padding: 0;
-            margin: 0;
             width: 58px;
             height: 15px;
             background: blue;
         }
 
         .upRed{
-            padding: 0;
-            margin: 0;
             width: 58px;
             height: 43px;
             background: red;
@@ -64,18 +98,12 @@
 
 
         .leftBlue{
-            display: inline-block;
-            padding: 0;
-            margin: 0;
             width: 15px;
             height: 58px;
             background: blue;
         }
 
         .rightRed{
-            display: inline-block;
-            padding: 0;
-            margin: 0;
             width: 43px;
             height: 58px;
             background: red;
@@ -83,18 +111,12 @@
         }
 
         .rightBlue{
-            display: inline-block;
-            padding: 0;
-            margin: 0;
             width: 15px;
             height: 58px;
             background: blue;
         }
 
         .leftRed{
-            display: inline-block;
-            padding: 0;
-            margin: 0;
             width: 43px;
             height: 58px;
             background: red;
@@ -104,75 +126,48 @@
 </head>
 
 <body>
-<div>
+
+<div class="main">
+    <div class="upNumber">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+        </ul>
+    </div>
+    <div class="leftNumber">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+        </ul>
+    </div>
     <div class="content" id="content">
         <ul>
             <li class="tableLi"></li>
         </ul>
     </div>
-    <input value="Go" type="text" id="getCommand" ><input value="执行" type="button" id="getClick">
+    <div class="command">
+        <input value="Go" type="text" id="getCommand" >
+        <input value="执行" type="button" id="getClick">
+    </div>
 </div>
 
-<script>
-    var content = document.getElementById("content");
-    var items="<ul><li class='tableLi'></li></ul>";
 
-    var getClick = document.getElementById("getClick");
-    var getCommand = document.getElementById("getCommand");
-
-
-
-    for(var i=1;i<100;i++){
-        items+="<ul><li class='tableLi'></li></ul>";
-    }
-    content.innerHTML = items;
-
-    var li = document.getElementsByTagName("li");
-
-    var number = Math.floor(Math.random()*100);
-
-    //上下左右
-    var up   = "<div class='upBlue'></div><div class='downRed'></div>";
-    var down = "<div class='upRed'></div><div class='downBlue'></div>";
-    var left = "<div class='leftBlue'></div><div class='rightRed'></div>";
-    var right = "<div class='leftRed'></div><div class='rightBlue'></div>"
-
-    var turn = [up,right,down,left];
-    //默认情况下是向上的
-    var Items = right;
-    li[number].innerHTML=Items;
-
-    getClick.addEventListener("click",function(){
-        initEvent();
-    },false);
-
-
-    function initEvent(){
-        var command = getCommand.value.trim().toLocaleLowerCase();
-
-        li[number].innerHTML="";
-        if(command == "go"){
-            if(Items == up && number/10.0>1){
-                number=number -10;
-            }else if(Items == down && number/10.0<9){
-                number =number + 10;
-            }else if(Items == left && number%10>1){
-                number--;
-            }else if(Items == right && number%10<9){
-                number++;
-            }
-        }else if(command == "turn left" || command == "left"){
-            Items = turn[(turn.indexOf(Items)+3)%4];
-        }else if(command == "turn right" || command == "right"){
-            Items = turn[(turn.indexOf(Items)+1)%4];
-        }else if(command == "turn back" || command == "back"){
-            Items = turn[(turn.indexOf(Items)+2)%4];
-        }
-
-        li[number].innerHTML=Items;
-    }
-
-
-</script>
+<script src="js/index.js"></script>
 </body>
 </html>
